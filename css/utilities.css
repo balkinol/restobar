@@ -1,0 +1,179 @@
+/* Global */
+
+:root {
+  --primary-color: #333;
+  --secondary-color: rgb(250, 227, 20);
+  --white-color: #fff;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: var(--white-color);
+}
+
+.current a {
+  color: var(--secondary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  border-bottom: 2px solid var(--secondary-color);
+  transition: 0.5s;
+  padding-bottom: 3px;
+}
+
+.btn:hover {
+  border: none;
+  color: var(--secondary-color);
+}
+
+/* Check */
+
+#check {
+  display: none;
+}
+
+label {
+  position: fixed;
+  right: 5vh;
+  top: 1.7rem;
+  display: none;
+  z-index: 111;
+}
+
+label .btn-line {
+  width: 28px;
+  height: 3px;
+  background: var(--white-color);
+  margin-bottom: 5px;
+  transition: 0.5s;
+}
+
+#check:checked ~ label .btn-line {
+  transform: rotate(180deg);
+}
+
+#check:checked ~ label .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#check:checked ~ label .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+#check:checked ~ label .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Media Query */
+
+@media (max-width: 768px) {
+  label {
+    display: block;
+  }
+
+  .menu-icon {
+    margin-right: 4rem;
+  }
+
+  .menu-nav ul {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    width: 60vw;
+    background: rgba(0, 0, 0, 0.8);
+    left: 0;
+    top: 0;
+    transform: translateX(-60vw);
+    transition: 0.5s;
+  }
+
+  .menu-nav ul li {
+    margin: 3rem 0 2rem 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .menu-nav ul li a {
+    padding-bottom: 2rem;
+  }
+
+  #check:checked ~ ul {
+    transform: translateX(0);
+  }
+
+  .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .showcase {
+    height: 40vh;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .content-head {
+    border: none;
+    text-align: center;
+  }
+
+  .main-2 .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer .p {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-icon {
+    width: 80px;
+  }
+
+  label {
+    top: 1.5rem;
+  }
+
+  .grid-box {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase {
+    height: 30vh;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
